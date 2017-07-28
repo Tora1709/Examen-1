@@ -1,0 +1,30 @@
+{
+  "name": "Examen1",
+  "homepage": "https://github.com/Tora1709/Examen-1",
+  "authors": [
+    "Kevin <kvegac@ucenfotec.ac.cr>"
+  ],
+  "description": "Examen uno de proyecto web 1",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^0.4.2",
+    "oclazyload": "^1.1.0",
+    "angular-css": "^1.0.8",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "angular-messages": "^1.6.4",
+    "angular-material": "^1.1.4",
+    "angular-cookies": "^1.6.4",
+    "ng-file-upload": "^12.2.13",
+    "angular-local-storage": "^0.7.1"
+  }
+}
