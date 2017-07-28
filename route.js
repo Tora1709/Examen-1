@@ -18,24 +18,24 @@
         return $ocLazyLoad.load('./components/landing/landing.controller.js')
        }]
       },
-      controller: 'landingController',
+      // controller: 'landingController',
       controllerAs: 'vm'
     })
-
-    .state('register',{
-      url: '/register',
-      templateUrl: 'components/register/register.view.html',
-      css: './css/style.register.css',
-      resolve: {
-       load: ['$ocLazyLoad', function($ocLazyLoad){
-        return $ocLazyLoad.load('./components/register/register.controller.js')
-       }]
-      },
-      controller: 'landingController',
-      controllerAs: 'vm'
-    })
-
-    $urlRouterProvider.otherwise('/landing');
+    //
+    // .state('register',{
+    //   url: '/register',
+    //   templateUrl: 'components/register/register.view.html',
+    //   css: './css/style.register.css',
+    //   resolve: {
+    //    load: ['$ocLazyLoad', function($ocLazyLoad){
+    //     return $ocLazyLoad.load('./components/register/register.controller.js')
+    //    }]
+    //   },
+    //   controller: 'registerController',
+    //   controllerAs: 'vm'
+    // })
+    //
+    // $urlRouterProvider.otherwise('/landing');
   }
 
 })();
