@@ -1,0 +1,240 @@
+<div class="container">
+  <h2>Registro de Instructor</h2>
+  <div class="row">
+    <form class="form-horizontal" name="frmAdmin" ng-submit="ctrl.save(ctrl.user)" novalidate autocomplete="off">
+
+    <!-- form admiIzq -->
+    <div class="col-md-6 admiIzq">
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Cedula</label>
+        <input class="col-offset-1 col-md-4" type="text" placeholder="101230456" ng-model="ctrl.user.id" name="id" required ng-pattern="/^[0-9]{7,9}$/">
+      </div>
+      <div ng-messages="frmAdmin.id.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Primer Nombre</label>
+        <input class="col-offset-1 col-md-4" type="text" ng-model="ctrl.user.firstName" name="firstName" required>
+      </div>
+      <div ng-messages="frmAdmin.firstName.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Segundo Nombre</label>
+        <input class="col-offset-1 col-md-4" type="text" ng-model="ctrl.user.middleName" name="middleName" required>
+      </div>
+      <div ng-messages="frmAdmin.middleName.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Primer Apellido</label>
+        <input class="col-offset-1 col-md-4" type="text" ng-model="ctrl.user.lastName" name="lastName" required>
+      </div>
+      <div ng-messages="frmAdmin.lastName.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <div class="col-md-12">
+        <label class="col-md-4">Segundo Apellido</label>
+        <input class="col-offset-1 col-md-4" type="text" ng-model="ctrl.user.SecLastName" name="SecLastName" required>
+      </div>
+      <div ng-messages="frmAdmin.SecLastName.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Nacionalidad</label>
+        <input class="col-offset-1 col-md-4" type="text" ng-model="ctrl.user.nationality" name="nationality" required>
+      </div>
+      <div ng-messages="frmAdmin.nationality.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Tipo de identificación</label>
+        <select class="col-offset-1 col-md-4" ng-model="ctrl.user.typeId" name="typeId" required>
+          <option value="">---Indique el tipo---</option>
+          <option value="nacional">Nacional</option>
+          <option value="pasaporte">Pasaporte</option>
+        </select>
+      </div>
+      <div ng-messages="frmAdmin.typeId.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Fecha de nacimiento</label>
+        <input class="col-offset-1 col-md-4" type="date" ng-model="ctrl.user.birthDate" name="birthDate" required>
+      </div>
+      <div ng-messages="frmAdmin.typeId.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Género </label>
+        <select class="col-offset-1 col-md-4" ng-model="ctrl.user.gender" name="gender" required>
+          <option value="">---Indique el tipo---</option>
+          <option value="femenino">Femenino</option>
+          <option value="masculino">Masculino</option>
+          <option value="indefinido">Indefinido</option>
+        </select>
+      </div>
+      <div ng-messages="frmAdmin.gender.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+    </div>
+
+    <!-- form admiDer -->
+    <div class="col-md-6 admiDer">
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Teléfono</label>
+        <input class="col-offset-1" type="text" ng-model="ctrl.user.phone" name="phone" required ng-pattern="/^[0-9]{8}$/">
+      </div>
+      <div ng-messages="frmAdmin.phone.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Nombre de usuario</label>
+        <input class="col-offset-1" type="text" ng-model="ctrl.user.username" name="username" required ng-pattern="/^[A-Za-z0-9]{8,}$/">
+      </div>
+      <div ng-messages="frmAdmin.username.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Contraseña</label>
+        <input class="col-offset-1" type="password"  placeholder="Minimo 8 caracteres"ng-model="ctrl.user.regPassword" name="regPassword" required
+        ng-pattern="/^(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/" ng-maxlength="10">
+        <span class="minCaract">Debe contar con (mayusculas,minisculas,numero,caracter especial)</span>
+      </div>
+      <div ng-messages="frmAdmin.regPassword.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Fotografia</label>
+        <input class="col-offset-1" type="text" ng-model="ctrl.user.photo" name="photo" required>
+      </div>
+      <div ng-messages="frmAdmin.photo.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Edad</label>
+        <input class="col-offset-1" type="text" ng-model="ctrl.user.age" name="age" required>
+      </div>
+      <div ng-messages="frmAdmin.age.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Contacto de referencia/ por caso de emergencia</label>
+        <input class="col-offset-1" type="text" ng-model="ctrl.user.reference" name="reference" required ng-pattern="/^[0-9]{8}$/">
+      </div>
+      <div ng-messages="frmAdmin.reference.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  <--></-->
+      <div class="col-md-12">
+        <label class="col-md-4">Rol</label>
+        <select class="col-offset-1" ng-model="ctrl.user.rol" name="rol" required>
+          <option value="cliente">Cliente</option>
+          <option value="administrador">Administrador</option>
+          <option value="instructor">Instructor</option>
+        </select>
+      </div>
+      <div ng-messages="frmAdmin.rol.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+      <!--input  -->
+      <div class="col-md-12">
+        <label class="col-md-4">Estado</label>
+        <select class="col-offset-1" ng-model="ctrl.user.state" name="rol" required>
+          <option value="Activo">Activo</option>
+          <option value="Inactivo">Inactivo</option>
+        </select>
+      </div>
+      <div ng-messages="frmAdmin.state.$error">
+        <div ng-messages-include="components/includes/messages.html"></div>
+      </div>
+
+    </div>
+
+
+      <button class="buttonReg col-offset-1 col-md-2" type="submit" ng-click="ctrl.reset()" ng-disabled="frmAdmin.$invalid">Register</button>
+      <input class="col-offset-1 col-md-2 button" type="button" value="Actualizar" ng-click="ctrl.update(user)">
+    </form>
+  </div>
+
+  <!-- filter input -->
+  <div class="table-responsive">
+    <table id="tblInstructor" class="table table-bordered table-hover table-condensed">
+      <thead>
+        <tr>
+          <th>Cédula</th>
+          <th>Primer Nombre</th>
+          <th>Segundo Nombre</th>
+          <th>Primer Apellido</th>
+          <th>Segundo Apellido</th>
+          <th>Nacionalidad</th>
+          <th>Tipo de identificación</th>
+          <th>Fecha de nacimiento</th>
+          <th>Género </th>
+          <th>Teléfono</th>
+          <th>Nombre Usuario</th>
+          <th>Contraseña</th>
+          <th>Photo</th>
+          <th>Edad</th>
+          <th>Contacto de referencia</th>
+          <th>Tipo de usuario</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in ctrl.users" >
+          <td>{{user.id}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.middleName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.SecLastName}}</td>
+          <td>{{user.nationality}}</td>
+          <td>{{user.typeId}}</td>
+          <td>{{user.birthDate | date}}</td>
+          <td>{{user.gender}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.regPassword}}</td>
+          <td>{{user.photo}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.reference}}</td>
+          <td>{{user.rol}}</td>
+          <td>{{user.state}}</td>
+          <td><input type="button" value="Editar" ng-click="ctrl.getInfo(user)"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
