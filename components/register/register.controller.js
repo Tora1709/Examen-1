@@ -50,6 +50,7 @@
    vm.save = function(){
      console.log('save')
      registerService.setPlayers(vm.player);
+     limpiar();
      init();
    }
 
@@ -64,5 +65,8 @@
      vm.player = pPlayer;
    }
 
+   function limpiar() {
+     vm.players = {}
+   }
   }
 })();
