@@ -1,0 +1,84 @@
+<!-- <div id="card" class="container">
+	<div class="row">
+	    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 card">
+    		<a href="#">
+    		<div class="thumbnail"  ng-repeat="property in vm.properties">
+    		    <img src="http://lorempixel.com/600/400" alt="#">
+    			<div class="caption">
+    				<h3>
+    					{{property.name}}
+    					<small>
+    						{{property.id}}
+    					</small>
+    				</h3>
+    				<hr>
+    				<p>Posición: {{property.posistion}}</p>
+            <p>Precio: {{property.price}}</p>
+            <p>Dueño: {{property.ownedby.name}}</p>
+            <input class="btn btn-default" type="button" value="Comprar" ng-click="vm.buy()">
+    			</div>
+    		</div>
+    		</a>
+    	</div>
+
+	</div>
+</div> -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>ID</th>
+      <th>Posicion</th>
+      <th>Precio</th>
+      <th>Dueño</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="property in vm.properties">
+      <th>{{property.name}}</th>
+      <th>{{property.id}}</th>
+      <th>{{property.posistion}}</th>
+      <th>{{property.price}}</th>
+      <th>{{property.ownedby.name}}</th>
+      <th>
+        <input type="text" name="player" list="playerList">
+        <datalist id="playerList">
+        <option value="">--Seleccione un comprador</option>
+        <option ng-repeat="player in vm.players" value="{{player.code}}">{{player.name}}</option>
+      </datalist>
+      </th>
+      <th><input class="btn btn-default" type="button" value="Comprar" ng-click="vm.buy(property,player)"></th>
+    </tr>
+  </tbody>
+</table>
+
+<!-- MODAL -->
+<div class="modal fade" id="formBuy" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body" id="notReg">
+        <p>{{property.name}}</p>
+        <p>{{property.id}}</p>
+        <p>{{property.posistion}}</p>
+        <p>{{property.price}}</p>
+        <p>{{property.ownedby.name}}</p>
+        <p>fsdfsdg</p>
+
+        <label for="">Comprador</label>
+        <select id="playerList">
+          <option value="">--Seleccione un comprador</option>
+          <option ng-repeat="player in vm.players" value="{{player.name}}">{{player.name}}</option>
+        </select>
+
+        <input type="button" value="Confirmar Compra" ng-click="vm.confirm()">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
