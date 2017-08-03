@@ -1,0 +1,43 @@
+<section>
+  <form class="" name="formPlayer">
+      <label for="">Codigo</label>
+      <input type="text" name="" value="" ng-model="vm.player.code">
+
+      <label for="">Nombre</label>
+      <input type="text" name="" value="" ng-model="vm.player.name">
+
+      <label for="">Alias</label>
+      <input type="text" name="" value="" ng-model="vm.player.nick">
+
+      <label for="">Coins</label>
+      <input type="text" name="" value="" ng-model="vm.player.coin">
+
+      <label for="">Foto</label>
+      <input type="file" name="" value="" ng-model="vm.player.photo" id="photo">
+
+      <button class="" type="button" ng-click="vm.presave()"  id="btnReg">Registrar</button>
+  </form>
+</section>
+
+<section>
+  <table>
+    <thead>
+      <tr>
+          <th>Codigo</th>
+          <th>Nombre</th>
+          <th>Alias</th>
+          <th>Coins</th>
+          <th>Foto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="player in vm.players">
+        <th>{{player.code}}</th>
+        <th>{{player.name}}</th>
+        <th>{{player.nick}}</th>
+        <th>{{player.coin}}</th>
+        <th><img ng-src="{{player.photo}}" width="40px" height="60px" /></th>
+      </tr>
+    </tbody>
+  </table>
+</section>
