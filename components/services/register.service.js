@@ -5,7 +5,37 @@
     .service('registerService', registerService);
 
   function registerService() {
-    var players = [];
+    var players = [
+      {
+    code: '001',
+    name:'Goku',
+    nick: 'Kokkun',
+    coin: 1500,
+    photo:'https://res.cloudinary.com/pabskun/image/upload/v1489535279/goku_cqc9tb.png'
+  },
+  {
+    code: '002',
+    name:'Piccolo',
+    nick: 'PikOREO',
+    coin: 1500,
+  photo:'https://res.cloudinary.com/pabskun/image/upload/v1489535276/piccolo_ksxdec.png'
+  },
+  {
+    code: '003',
+    name:'Logan',
+    nick: 'Lovezno',
+    coin: 1500,
+    photo:'https://res.cloudinary.com/pabskun/image/upload/v1489535284/lobezno_o1vs9g.png'
+  },
+  {
+
+    code: '004',
+    name:'Bomberman',
+    nick: 'Don Pepe y los Globos',
+    coin: 1500,
+    photo:'https://res.cloudinary.com/pabskun/image/upload/v1489535282/donpepe_x9hksw.png'
+  }
+    ];
 
     var publicAPI = {
       setPlayers: _setPlayers,
