@@ -15,7 +15,24 @@
     <title>Players</title>
   </head>
   <body>
-      <div ui-view>
+    <div ng-controller="tabCtrl" layout="column" class="demo" >
+
+
+        <md-toolbar>
+          <h2 class="md-toolbar-tools">
+            <span>PUBG</span>
+          </h2>
+        </md-toolbar>
+        <md-tabs md-stretch-tabs
+                 md-selected="selectedIndex">
+           <md-tab label="inicio"></md-tab>
+           <md-tab label="Registro usuarios"></md-tab>
+           <md-tab label="Propiedades"></md-tab>
+        </md-tabs>
+
+        <div id="content" ui-view > </div>
+
+      </div>
 
         <!-- AngularJS -->
 
@@ -46,5 +63,7 @@
         <!-- Servicios -->
         <script src="./components/services/register.service.js"></script>
         <script src="./components/services/image.service.js"></script>
+        <script src="./components/services/propierty.service.js"></script>
+
   </body>
 </html>
