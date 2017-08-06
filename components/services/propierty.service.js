@@ -742,11 +742,11 @@
     }
 
     //funcion que actualiza los datos modificados
-    function _updatePropierties(ppropiertiesModified) {
+    function _updatePropierties(pCompra) {
       var propiertiesList = _getPropierties();
       for (var i = 0; i < propiertiesList.length; i++) {
-        if (propiertiesList[i].name == ppropiertiesModified.selected.name) {
-          propiertiesList[i].ownedby = ppropiertiesModified.player;
+        if (propiertiesList[i].name == pCompra.selected.name) {
+          propiertiesList[i].ownedby = pCompra.player;
         }
       }
       console.log(propiertiesList);
