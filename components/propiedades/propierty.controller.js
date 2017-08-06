@@ -38,14 +38,23 @@
           player = playerList[i];
         }
       }
-      console.log(vm.selected);
-      console.log(player);
-      update(player);
+      // console.log(vm.selected);
+      // console.log(player);
+      update(player, vm.selected);
     }
 
-     function update(player){
-      propiertyService.updatePropierties(player);
-      console.log('update')
+     function update(player, selected){
+       var buy = {
+        player,
+        selected
+      }
+       console.log(vm.selected);
+       console.log(player);
+       console.log(buy);
+      propiertyService.updatePropierties(buy);
+
+      //  console.log(vm.temporary);
+       console.log('update')
       init();
     }
   }

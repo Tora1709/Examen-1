@@ -745,10 +745,11 @@
     function _updatePropierties(ppropiertiesModified) {
       var propiertiesList = _getPropierties();
       for (var i = 0; i < propiertiesList.length; i++) {
-        if (propiertiesList[i].ownedby == ppropiertiesModified.name) {
-          propiertiesList[i] = ppropiertiesModified;
+        if (propiertiesList[i].name == ppropiertiesModified.selected.name) {
+          propiertiesList[i].ownedby = ppropiertiesModified.player;
         }
       }
+      console.log(propiertiesList);
       localStorage.setItem('lsPropiertiesList', JSON.stringify(propiertiesList));
     }
 
