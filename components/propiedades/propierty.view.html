@@ -32,7 +32,7 @@
       <th>Posicion</th>
       <th>Precio</th>
       <th>Dueño</th>
-      <th>seleccione</th>
+      <!-- <th>Comprador</th> -->
     </tr>
   </thead>
   <tbody>
@@ -42,14 +42,7 @@
       <th>{{property.posistion}}</th>
       <th>{{property.price}}</th>
       <th>{{property.ownedby.name}}</th>
-      <th>
-        <input type="text" name="player" list="playerList" ng-model="vm.player">
-        <datalist id="playerList">
-        <option value="">--Seleccione un comprador</option>
-        <option ng-repeat="player in vm.players" value="{{player.code}}">{{player.name}}</option>
-      </datalist>
-      </th>
-      <th><input class="btn btn-default" type="button" value="Comprar" ng-click="vm.buy(property, vm.player)"></th>
+      <th><input class="btn btn-default" type="button" value="Comprar" ng-click="vm.buy(property)"></th>
     </tr>
   </tbody>
 </table>
@@ -62,20 +55,14 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body" id="notReg">
-        <p>{{property.name}}</p>
-        <p>{{property.id}}</p>
-        <p>{{property.posistion}}</p>
-        <p>{{property.price}}</p>
-        <p>{{property.ownedby.name}}</p>
-        <p>fsdfsdg</p>
-
+      
         <label for="">Comprador</label>
-        <select id="playerList">
+        <select id="playerList" ng-model="vm.player">
           <option value="">--Seleccione un comprador</option>
           <option ng-repeat="player in vm.players" value="{{player.name}}">{{player.name}}</option>
         </select>
 
-        <input type="button" value="Confirmar Compra" ng-click="vm.confirm()">
+        <input type="button" value="Confirmar Compra" ng-click="vm.confirm(vm.player)">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
