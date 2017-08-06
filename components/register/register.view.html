@@ -19,7 +19,7 @@
   </form>
 </section>
 
-<section>
+<!-- <section>
   <table>
     <thead>
       <tr>
@@ -40,4 +40,36 @@
       </tr>
     </tbody>
   </table>
+</section> -->
+
+<section>
+  <h2>Jugadores</h2>
+  <div class="container">
+	<div class="row">
+		<div class="col-lg-3 col-sm-6 col-md-4"  ng-repeat="player in vm.players">
+
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+                    <img ng-src="{{player.photo}}">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <a target="_blank" href="http://scripteden.com/">{{player.name}}</a>
+                    </div>
+                    <div class="desc">{{player.code}}</div>
+                    <div class="desc">{{player.nick}}</div>
+                    <div class="desc">{{player.coin}}</div>
+                </div>
+                <div class="bottom">
+
+                </div>
+            </div>
+
+        </div>
+
+	</div>
+</div>
 </section>

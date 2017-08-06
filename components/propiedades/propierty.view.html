@@ -43,13 +43,13 @@
       <th>{{property.price}}</th>
       <th>{{property.ownedby.name}}</th>
       <th>
-        <input type="text" name="player" list="playerList">
+        <input type="text" name="player" list="playerList" ng-model="vm.player">
         <datalist id="playerList">
         <option value="">--Seleccione un comprador</option>
         <option ng-repeat="player in vm.players" value="{{player.code}}">{{player.name}}</option>
       </datalist>
       </th>
-      <th><input class="btn btn-default" type="button" value="Comprar" ng-click="vm.buy(property,player)"></th>
+      <th><input class="btn btn-default" type="button" value="Comprar" ng-click="vm.buy(property, vm.player)"></th>
     </tr>
   </tbody>
 </table>
