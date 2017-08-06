@@ -46,6 +46,7 @@
         player,
         selected
       }
+      registerService.updatePlayers(buy);
       propiertyService.updatePropierties(buy);
       init();
       vm.player = '';
