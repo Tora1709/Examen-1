@@ -745,7 +745,7 @@
     function _updatePropierties(ppropiertiesModified) {
       var propiertiesList = _getPropierties();
       for (var i = 0; i < propiertiesList.length; i++) {
-        if (propiertiesList[i].id == ppropiertiesModified.id) {
+        if (propiertiesList[i].ownedby == ppropiertiesModified.name) {
           propiertiesList[i] = ppropiertiesModified;
         }
       }

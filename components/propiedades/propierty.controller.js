@@ -40,7 +40,13 @@
       }
       console.log(vm.selected);
       console.log(player);
+      update(player);
     }
 
+     function update(player){
+      propiertyService.updatePropierties(player);
+      console.log('update')
+      init();
+    }
   }
 })();

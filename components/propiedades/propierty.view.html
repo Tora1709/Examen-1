@@ -41,7 +41,7 @@
       <th>{{property.id}}</th>
       <th>{{property.posistion}}</th>
       <th>{{property.price}}</th>
-      <th>{{property.ownedby.name}}</th>
+      <th>{{property.ownedby.own}}</th>
       <th><input class="btn btn-default" type="button" value="Comprar" ng-click="vm.buy(property)"></th>
     </tr>
   </tbody>
@@ -55,7 +55,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body" id="notReg">
-      
+
         <label for="">Comprador</label>
         <select id="playerList" ng-model="vm.player">
           <option value="">--Seleccione un comprador</option>
