@@ -742,13 +742,14 @@
     }
 
     //funcion que actualiza los datos modificados
-    function _updatePropierties(ppropiertiesModified) {
+    function _updatePropierties(pCompra) {
       var propiertiesList = _getPropierties();
       for (var i = 0; i < propiertiesList.length; i++) {
-        if (propiertiesList[i].id == ppropiertiesModified.id) {
-          propiertiesList[i] = ppropiertiesModified;
+        if (propiertiesList[i].name == pCompra.selected.name) {
+          propiertiesList[i].ownedby = pCompra.player;
         }
       }
+      console.log(propiertiesList);
       localStorage.setItem('lsPropiertiesList', JSON.stringify(propiertiesList));
     }
 

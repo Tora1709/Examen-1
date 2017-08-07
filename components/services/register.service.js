@@ -62,11 +62,13 @@
     }
 
     //funcion que actualiza los datos modificados
-    function _updatePlayers(pplayersModified) {
+    function _updatePlayers(pplayers) {
+      var compra = '';
       var playersList = _getPlayers();
       for (var i = 0; i < playersList.length; i++) {
-        if (playersList[i].code == pplayersModified.code) {
-          playersList[i] = pplayersModified;
+        if (playersList[i].code == pplayers.player.code) {
+          compra = playersList[i].coin - pplayers.selected.price;
+          playersList[i].coin = compra;
         }
       }
       localStorage.setItem('lsPlayersList', JSON.stringify(playersList));
