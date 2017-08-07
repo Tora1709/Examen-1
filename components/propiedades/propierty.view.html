@@ -23,23 +23,27 @@
 
 	</div>
 </div> -->
+<div class="">
+  <h2>Propiedades</h2>
+  <input id="" type="search" name="nameFilter" ng-model="vm.nameFilter" placeholder="Buscar">
+</div>
 
 <table>
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>ID</th>
       <th>Posicion</th>
+      <th>Nombre</th>
+      <th>ID</th>      
       <th>Precio</th>
       <th>Dueño</th>
       <!-- <th>Comprador</th> -->
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="property in vm.properties">
+    <tr ng-repeat="property in vm.properties | filter:vm.nameFilter | orderBy:'posistion':false">
+      <th>{{property.posistion}}</th>
       <th>{{property.name}}</th>
       <th>{{property.id}}</th>
-      <th>{{property.posistion}}</th>
       <th>{{property.price}}</th>
       <th>{{property.ownedby.name}}</th>
       <th><input class="btn btn-default" type="button" value="Comprar" ng-click="vm.buy(property)"></th>
