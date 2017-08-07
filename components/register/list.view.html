@@ -1,0 +1,35 @@
+<section class="">
+  <div class="col-md-10 col-md-offset-1" id="searchBar">
+    <h2 class="col-md-9">Jugadores</h2>
+    <input class="col-md-3" id="search" type="search" name="nameFilter" ng-model="vm.nameFilter" placeholder="Buscar">
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div id="border-box" class="col-lg-3 col-sm-6 col-md-4" ng-repeat="player in vm.players | filter:vm.nameFilter | orderBy:'code':false">
+
+        <div class="card hovercard">
+          <div class="cardheader">
+
+          </div>
+          <div class="avatar">
+            <img ng-src="{{player.photo}}">
+          </div>
+          <div class="info">
+            <div class="title">
+              <h3>{{player.name}}</h3>
+            </div>
+            <div class="desc">ID: {{player.code}}</div>
+            <div class="desc">Alias: {{player.nick}}</div>
+            <div class="desc">Coins: {{player.coin}}</div>
+          </div>
+          <div class="bottom">
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
