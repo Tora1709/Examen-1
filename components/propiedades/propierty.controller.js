@@ -39,6 +39,7 @@
         }
       }
       update(player, vm.selected);
+      $("#formCheck").modal();
     }
 
      function update(player, selected){

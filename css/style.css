@@ -1,3 +1,7 @@
 body{
-  margin: 0 20px; 
+  margin: 0 20px;
+}
+#notReg{
+  text-align: center;
+  font-size: 15px;
 }

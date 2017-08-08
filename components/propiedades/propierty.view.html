@@ -23,28 +23,6 @@
     </div>
 </div>
 
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Posicion</th>
-      <th>Nombre</th>
-      <th>ID</th>
-      <th>Precio</th>
-      <th>Dueño</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="property in vm.properties | filter:vm.nameFilter | orderBy:'posistion':false">
-      <th>{{property.posistion}}</th>
-      <th>{{property.name}}</th>
-      <th>{{property.id}}</th>
-      <th>{{property.price}}</th>
-      <th>{{property.ownedby.name}}</th>
-      <th><input class="btn btn-default" type="button" value="Comprar" ng-click="vm.buy(property)"></th>
-    </tr>
-  </tbody>
-</table> -->
-
 <!-- MODAL -->
 <div class="modal fade" id="formBuy" role="dialog">
   <div class="modal-dialog modal-sm">
@@ -60,11 +38,28 @@
           <option ng-repeat="player in vm.players" value="{{player.name}}">{{player.name}}</option>
         </select>
 
-        <input type="button" value="Confirmar Compra" ng-click="vm.confirm(vm.player)">
+        <input id="confirm" type="button" class="btn btn-primary" value="Confirmar Compra" ng-click="vm.confirm(vm.player)">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="formCheck" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" id="notReg">
+          <h3>Compra exitosa</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </div>

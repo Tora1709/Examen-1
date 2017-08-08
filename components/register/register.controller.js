@@ -39,7 +39,13 @@
 
     vm.save = function() {
       console.log('save')
-      registerService.setPlayers(vm.player);
+      var Validation = registerService.valNewPlayers(vm.player);
+      if (Validation === false){
+        registerService.setPlayers(vm.player);
+        $("#formSuccess").modal();
+      }else {
+        $("#formRepeat").modal();
+      };
       limpiar();
       init();
     }
