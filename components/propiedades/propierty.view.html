@@ -1,0 +1,65 @@
+
+<div class="col-md-10 col-md-offset-1" id="searchBar">
+  <h2 class="col-md-9">Propiedades</h2>
+  <input id="search" class="col-md-3" type="search" name="nameFilter" ng-model="vm.nameFilter" placeholder="Buscar">
+</div>
+
+<div class="index-content">
+    <div class="container">
+
+                <div class="col-lg-4" ng-repeat="property in vm.properties | filter:vm.nameFilter | orderBy:'posistion':false">
+                    <div class="card">
+                        <img src="http://lorempixel.com/400/200/city/">
+                        <h4>{{property.name}}</h4>
+                        <p>{{property.posistion}}</p>
+                        <p>Id: {{property.id}}</p>
+                        <p>Precio: {{property.price}}</p>
+                        <p>Dueño: {{property.ownedby.name}}</p>
+                        <input class="blue-button" type="button" value="Comprar" ng-click="vm.buy(property)">
+
+                    </div>
+                </div>
+
+    </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="formBuy" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body" id="notReg">
+
+        <label for="">Comprador</label>
+        <select id="playerList" ng-model="vm.player">
+          <option value="">--Seleccione un comprador</option>
+          <option ng-repeat="player in vm.players" value="{{player.name}}">{{player.name}}</option>
+        </select>
+
+        <input id="confirm" type="button" class="btn btn-primary" value="Confirmar Compra" ng-click="vm.confirm(vm.player)">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="formCheck" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" id="notReg">
+          <h3>Compra exitosa</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
