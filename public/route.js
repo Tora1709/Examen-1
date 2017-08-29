@@ -71,17 +71,17 @@
     $scope.$watch('selectedIndex', function(current, old) {
       switch (current) {
         case 0:
-          $location.url("/landing");
-          break;
-        case 1:
           $location.url("/register");
           break;
-        case 2:
+        case 1:
           $location.url("/list");
           break;
-        case 3:
+        case 2:
           $location.url("/propierty");
           break;
+        // case 3:
+        //   $location.url("/landing");
+        //   break;
       }
     });
   }

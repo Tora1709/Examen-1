@@ -27,20 +27,35 @@
     }
 
     vm.presave = function(update) {
+      console.log('presave')
 
-      client.pick({
-        accept: 'image/*',
-        maxFiles: 5,
-        imageMax: [1024, 1024]
-      }).then(function(result) {
-        console.log(JSON.stringify(result.filesUploaded))
-        
-      })
+      vm.loading = true;
+
+      vm.cloudObj.data.file =document.getElementById("photo").files[0];
+
+      Upload.upload(vm.cloudObj)
+
+        .success(function(data){
+
+          vm.sponsor.photo = data.url;
+
+          if (!update) {
+             vm.save();
+          }
+
+        })
+        .error(function (data) {
+           console.log('errorPhoto');
+        }
+         );
+      // }
+      vm.loading = false;
     }
 
     vm.save = function() {
 
       console.log(vm.player);
+      vm.player.bio = localStorage.getItem('lsFile');
       var Validation = validCode(vm.player);
       if (Validation === false){
         registerService.setPlayers(vm.player);

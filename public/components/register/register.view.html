@@ -34,15 +34,15 @@
 
     <div class="form-group col-md-6 col-sm-12 col-xs-12">
       <label for="">Foto</label>
-      <!-- <input type="file" name="photo" value="" ng-model="vm.player.photo" id="photo"> -->
-      <!-- <input type="button" value="Upload" onclick="showPicker()" ng-model="vm.player.photo"/> -->
-      <a href="#" id="url"></a>
+      <input type="file" name="photo" value="" ng-model="vm.player.photo" id="photo">
+      <!-- <input type="button" value="Upload" onclick="vm.pick()" ng-model="vm.player.photo"/> -->
+      <a href="" id="url"></a>
 
 
     </div>
 
     <div class="form-group col-md-offset-4 col-md-2 col-sm-offset-10 col-sm-2 col-xs-offset-10 col-xs-2">
-      <button class="btn btn-primary" type="button" ng-click="vm.presave()" id="btnReg" ng-disabled="formPlayer.$invalid">Registrar</button>
+      <button class="btn btn-primary" type="button" ng-click="vm.save()" id="btnReg" ng-disabled="formPlayer.$invalid">Registrar</button>
     </div>
 
   </form>
@@ -80,15 +80,3 @@
     </div>
   </div>
 </div>
-<!-- <script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script>
-
-
-<script src="https://static.filestackapi.com/v3/filestack.js">
-var client = filestack.init('A5DNJkmURN4Og4LSmqI2wz');
-
-function showPicker() {
-  client.pick({}).then(function(result) {
-    console.log(JSON.stringify(result.filesUploaded))
-  });
-}
-</script> -->

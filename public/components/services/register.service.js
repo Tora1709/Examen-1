@@ -11,9 +11,17 @@
       setPlayers: _setPlayers,
       getPlayers: _getPlayers,
       updatePlayers: _updatePlayers,
-      valNewPlayers: _valNewPlayers
+      valNewPlayers: _valNewPlayers,
+      setLocal : _setLocal
     };
     return publicAPI;
+
+    function _setLocal(fileUrl) {
+      var playersList = "";
+
+      playersList.push(fileUrl);
+      localStorage.setItem('lsPlayersList', JSON.stringify(playersList));
+    }
     //funcion para enviar datos a local storage
     function _setPlayers(pPlayers) {
       // var playersList = _getPlayers();
