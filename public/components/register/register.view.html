@@ -2,7 +2,7 @@
   <form class="form col-md-12 col-lg-12 col-sm-12 col-xs-12" name="formPlayer">
     <div class="form-group col-md-6 col-sm-12 col-xs-12">
       <label for="">Código</label>
-      <input type="text" class="form-control" name="code" value="" ng-model="vm.player.code" ng-minlength="3" ng-maxlength="15" required>
+      <input type="number" class="form-control" name="code" value="" ng-model="vm.player.code" ng-minlength="1" ng-maxlength="15" required>
       <div ng-messages="formPlayer.code.$error">
         <div ng-messages-include="components/includes/messages.html"></div>
       </div>

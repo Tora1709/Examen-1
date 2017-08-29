@@ -1,8 +1,8 @@
 {
-  "name": "examen-1",
+  "name": "examen1",
   "version": "1.0.0",
   "description": "Examen1 de proyecto",
-  "main": "Gulpfile.js",
+  "main": "api/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,16 +10,20 @@
     "type": "git",
     "url": "git+https://github.com/Tora1709/Examen-1.git"
   },
-  "author": "",
+  "author": "Kevin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Tora1709/Examen-1/issues"
   },
   "homepage": "https://github.com/Tora1709/Examen-1#readme",
   "dependencies": {
+    "express": "^4.15.4",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-nodemon": "^2.2.1",
-    "nib": "^1.1.2"
+    "mongoose": "^4.11.9",
+    "morgan": "~1.5.0",
+    "nib": "^1.1.2",
+    "socket.io": "^2.0.3"
   }
 }

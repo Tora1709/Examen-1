@@ -1,51 +1,59 @@
 'use strict';
-var gulp = require('gulp'),
-    nib = require('nib'),
-    connect = require('gulp-connect');
+var gulp = require('gulp');
+var nib = require('nib');
+var nodemon = require('gulp-nodemon');
+var connect = require('gulp-connect');
 
-// Servidor web de desarrollo
-gulp.task('connect', function () {
+gulp.task('connect',function(){
   connect.server({
-    root:'./',
-    port: 8000,
-    livereload: true
+    root:'public',
+    port:8000,
+    livereload:true
   });
+  nodemon();
 });
-// recarga de css
-gulp.task('css', function () {
-  gulp.src('./css/*.css')
+
+//tarea para recargar el css
+gulp.task('css',function(){
+  gulp.src('./public/css/*.css')
     .pipe(connect.reload())
-})
-// recarga de html
-gulp.task('html', function () {
-    gulp.src('./*.html')
+});
+
+//tarea para recargar el html
+gulp.task('html',function(){
+  gulp.src('./public/*.html')
     .pipe(connect.reload())
-})
+});
 // recarga de js
 gulp.task('js', function () {
-  gulp.src('./components/*.js')
+  gulp.src('./public/components/*.js')
     .pipe(connect.reload())
-})
+});
 
 gulp.task('watch', function () {
   gulp.watch([
-    './css/*.css'
+    './public/*.css',
+    './public/components/*.css',
+    './public/components/**/*.css',
+    './public/components/**/**/*.css'
   ], ['css']);
 
   gulp.watch([
-    './*.js',
-    './components/*.js',
-    './components/**/*.js',
-    './components/**/**/*.js',
+    './public/*.js',
+    './public/components/*.js',
+    './public/components/**/*.js',
+    './public/components/**/**/*.js',
+    './api/*.js',
+    './api/components/*.js',
+    './api/components/**/*.js',
+    './api/components/**/**/*.js'
   ], ['js']);
 
   gulp.watch([
-    './*.html',
-    './components/*.html',
-    './components/**/*.html',
-    './components/**/**/*.html'
+    './public/*.html',
+    './public/components/*.html',
+    './public/components/**/*.html',
+    './public/components/**/**/*.html'
   ], ['html']);
 })
-
-gulp.task('kevExam', ['connect','css','html','js','watch'])
-// npm install -g gulp gulp-cli nodemon
+gulp.task('exam',['connect','css','html','js','watch']);
