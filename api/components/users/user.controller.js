@@ -7,7 +7,8 @@ module.exports.save = function(req, res) {
     nick: req.body.nick,
     coin: req.body.coin,
     name: req.body.name,
-    photo: req.body.photo
+    photo: req.body.photo,
+    bio: req.body.bio
   });
 
 

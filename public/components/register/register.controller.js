@@ -37,7 +37,7 @@
 
         .success(function(data){
 
-          vm.sponsor.photo = data.url;
+          vm.player.photo = data.url;
 
           if (!update) {
              vm.save();

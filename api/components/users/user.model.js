@@ -8,7 +8,8 @@ var UserSchema = new mongoose.Schema({
   nick: {type: String, required:false},
   coin: {type: Number, required:false},
   name: {type: String, required:false},
-  photo: {type: String, required:false}
+  photo: {type: String, required:false},
+  bio: {type: String, required: false}
 });
 
 module.exports = mongoose.model('user', UserSchema); //nombre del modelo dentro del back end y el userSchema es el nombre dentro de mongoose

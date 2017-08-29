@@ -3,7 +3,7 @@
     const client = filestack.init('A5DNJkmURN4Og4LSmqI2wz');
 
         client.pick({
-          accept: 'image/*',
+          accept: ['image/*', '.pdf', 'video/mp4','docx'],
         }).then(function(result) {
           const fileUrl = result.filesUploaded[0].url;
           // link.href=fileUrl;
