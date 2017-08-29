@@ -19,6 +19,7 @@
     }
     init();
 
+
     function loadPLayers(){
       registerService.getPlayers().then(function (response){
         vm.players = response.data;
@@ -26,28 +27,21 @@
     }
 
     vm.presave = function(update) {
-      console.log('presave')
 
-      vm.loading = true;
-
-      vm.cloudObj.data.file = document.getElementById("photo").files[0];
-      Upload.upload(vm.cloudObj)
-        .success(function(data) {
-          vm.player.photo = data.url;
-          if (!update) {
-            vm.save();
-          }
-        })
-        .error(function(data) {
-          console.log('errorPhoto');
-        });
-      // }
-      vm.loading = false;
+      client.pick({
+        accept: 'image/*',
+        maxFiles: 5,
+        imageMax: [1024, 1024]
+      }).then(function(result) {
+        console.log(JSON.stringify(result.filesUploaded))
+        
+      })
     }
 
     vm.save = function() {
-      console.log('save')
-      var Validation = registerService.valNewPlayers(vm.player);
+
+      console.log(vm.player);
+      var Validation = validCode(vm.player);
       if (Validation === false){
         registerService.setPlayers(vm.player);
         $("#formSuccess").modal();
@@ -56,6 +50,17 @@
       };
       limpiar();
       init();
+
+    }
+
+    function validCode(player){
+      var validation = false;
+      for (var i = 0; i < vm.players.length; i++) {
+        if (vm.players[i].code == player.code) {
+          validation = true;
+        }
+      }
+      return validation;
     }
 
     vm.update = function() {
@@ -72,5 +77,6 @@
     function limpiar() {
       vm.players = {}
     }
+
   }
 })();

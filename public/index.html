@@ -44,6 +44,17 @@
         <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
         <!-- Dependencias de AngularJs -->
+        <script src="https://static.filestackapi.com/v3/filestack.js"></script>
+        <script src="./js/filestack.js"></script>
+        <!-- <script src="https://static.filestackapi.com/v3/filestack.js">
+        var client = filestack.init('A5DNJkmURN4Og4LSmqI2wz');
+
+        function showPicker() {
+          client.pick({}).then(function(result) {
+            console.log(JSON.stringify(result.filesUploaded))
+          });
+        }
+        </script> -->
 				<script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 				<script src="./bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
 				<script src="./bower_components/angular-messages/angular-messages.min.js"></script>
@@ -56,7 +67,6 @@
         <script src="./bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
         <script src="./bower_components/ng-file-upload/ng-file-upload.min.js"></script>
 
-
         <!-- Scripts de la aplicacion -->
   			<script src="./app.js"></script>
   			<script src="./route.js"></script>
@@ -66,7 +76,7 @@
         <script src="./components/services/image.service.js"></script>
         <script src="./components/services/propierty.service.js"></script>
 
-        <script src="https://static.filestackapi.com/v3/filestack.js"></script>
 
-  </body>
+
+      </body>
 </html>

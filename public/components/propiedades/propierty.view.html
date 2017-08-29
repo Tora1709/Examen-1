@@ -7,7 +7,7 @@
 <div class="index-content">
     <div class="container">
 
-                <div class="col-lg-4" ng-repeat="property in vm.properties | filter:vm.nameFilter | orderBy:'posistion':false">
+                <div class="col-lg-4" ng-repeat="property in vm.property | filter:vm.nameFilter">
                     <div class="card">
                         <img src="http://lorempixel.com/400/200/city/">
                         <h4>{{property.name}}</h4>
@@ -61,5 +61,5 @@
       </div>
     </div>
   </div>
-  
+
 </div>
