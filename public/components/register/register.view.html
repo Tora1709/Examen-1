@@ -18,7 +18,7 @@
 
     <div class="form-group col-md-6 col-sm-12 col-xs-12">
       <label for="">Alias</label>
-      <input type="text" class="form-control" name="nick" value="" ng-model="vm.player.nick" ng-minlength="1" ng-maxlength="15" required>
+      <input type="text" class="form-control" name="nick" value="" ng-model="vm.player.nick" ng-minlength="1" ng-maxlength="50" required>
       <div ng-messages="formPlayer.nick.$error">
         <div ng-messages-include="components/includes/messages.html"></div>
       </div>

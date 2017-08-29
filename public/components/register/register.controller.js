@@ -9,13 +9,21 @@
 
     var vm = this;
     vm.player = {};
+    vm.players = "";
     vm.cloudObj = ImageService.getConfiguration();
 
+      loadPLayers();
+
     function init() {
-      vm.players = registerService.getPlayers();
       vm.player = {};
     }
     init();
+
+    function loadPLayers(){
+      registerService.getPlayers().then(function (response){
+        vm.players = response.data;
+      })
+    }
 
     vm.presave = function(update) {
       console.log('presave')
