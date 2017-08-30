@@ -19,7 +19,7 @@ router.route('/properties_Get')
       propertiesController.findAll(req,res);
  });
 
-router.route('/properties_Update')
+router.route('/properties_update')
   .put(function(req, res){
     propertiesController.update(req,res);
  });

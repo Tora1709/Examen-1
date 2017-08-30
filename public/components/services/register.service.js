@@ -42,16 +42,18 @@
     }
 
     //funcion que actualiza los datos modificados
-    function _updatePlayers(pplayers) {
+    function _updatePlayers(buy, pPlayers) {
       var compra = '';
-      var playersList = _getPlayers();
+      var playersList = pPlayers;
       for (var i = 0; i < playersList.length; i++) {
-        if (playersList[i].code == pplayers.player.code) {
-          compra = playersList[i].coin - pplayers.selected.price;
+        if (playersList[i].code == buy.player.code) {
+          compra = playersList[i].coin - buy.selected.price;
           playersList[i].coin = compra;
+          var player = playersList[i];
         }
       }
-      localStorage.setItem('lsPlayersList', JSON.stringify(playersList));
+      // console.log(comprador);
+      return $http.put('http://localhost:3000/api/update_user', player);
     }
 
     //funcion que permite que no se repitan alumnos

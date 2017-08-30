@@ -3,25 +3,25 @@ var mongoose = require('mongoose');
 var PropertySchema = new mongoose.Schema({
         name:  String,
           identification:  String,
-          position:  String,
-          price:  String,
+          position:  Number,
+          price:  Number,
           rent: String ,
           multpliedrent: String,
-          housecost: String,
+          housecost: Number,
           group: String,
           ownedby: String,
-          buildings: String,
-          mortgaged: String,
+          buildings: Number,
+          mortgaged: Boolean,
           rel: {
           	Square: String,
-          	ProbabilityJailShort: String,
-          	Rank: String,
-          	ProbabilityJailLong: String
+          	ProbabilityJailShort: Number,
+          	Rank: Number,
+          	ProbabilityJailLong: Number
           },
-          ohousecost: String,
-          oprice: String,
-          averageProbability: String
-	
+          ohousecost: Number,
+          oprice: Number,
+          averageProbability: Number
+
 });
 
 module.exports = mongoose.model('Property', PropertySchema);
