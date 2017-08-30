@@ -55,7 +55,9 @@
     vm.save = function() {
 
       console.log(vm.player);
-      vm.player.bio = localStorage.getItem('lsFile');
+      var bio = localStorage.getItem('lsFile');
+      vm.player.bio =  bio.replace(/['"]+/g, '');
+
       var Validation = validCode(vm.player);
       if (Validation === false){
         registerService.setPlayers(vm.player);
@@ -65,7 +67,6 @@
       };
       limpiar();
       init();
-
     }
 
     function validCode(player){
@@ -91,6 +92,7 @@
 
     function limpiar() {
       vm.players = {}
+      setTimeout(location.reload.bind(location), 1500);
     }
 
   }
