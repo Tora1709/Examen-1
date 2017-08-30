@@ -7,7 +7,8 @@ module.exports.save = function(req, res) {
     nick: req.body.nick,
     coin: req.body.coin,
     name: req.body.name,
-    photo: req.body.photo
+    photo: req.body.photo,
+    bio: req.body.bio
   });
 
 
@@ -28,8 +29,8 @@ module.exports.save = function(req, res) {
 }
 
 module.exports.findAll = function(req, res) {
-    User.find().then(function(user) {
-        res.send(user);
+    User.find().then(function(users) {
+        res.send(users);
     })
 };
 

@@ -7,14 +7,14 @@
 <div class="index-content">
     <div class="container">
 
-                <div class="col-lg-4" ng-repeat="property in vm.properties | filter:vm.nameFilter | orderBy:'posistion':false">
+                <div class="col-lg-4" ng-repeat="property in vm.property | filter:vm.nameFilter">
                     <div class="card">
                         <img src="http://lorempixel.com/400/200/city/">
                         <h4>{{property.name}}</h4>
                         <p>{{property.posistion}}</p>
                         <p>Id: {{property.id}}</p>
                         <p>Precio: {{property.price}}</p>
-                        <p>Dueño: {{property.ownedby.name}}</p>
+                        <p>Dueño: {{property.ownedby}}</p>
                         <input class="blue-button" type="button" value="Comprar" ng-click="vm.buy(property)">
 
                     </div>
@@ -61,5 +61,5 @@
       </div>
     </div>
   </div>
-  
+
 </div>

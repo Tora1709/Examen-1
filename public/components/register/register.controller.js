@@ -19,6 +19,7 @@
     }
     init();
 
+
     function loadPLayers(){
       registerService.getPlayers().then(function (response){
         vm.players = response.data;
@@ -30,24 +31,34 @@
 
       vm.loading = true;
 
-      vm.cloudObj.data.file = document.getElementById("photo").files[0];
+      vm.cloudObj.data.file =document.getElementById("photo").files[0];
+
       Upload.upload(vm.cloudObj)
-        .success(function(data) {
+
+        .success(function(data){
+
           vm.player.photo = data.url;
+
           if (!update) {
-            vm.save();
+             vm.save();
           }
+
         })
-        .error(function(data) {
-          console.log('errorPhoto');
-        });
+        .error(function (data) {
+           console.log('errorPhoto');
+        }
+         );
       // }
       vm.loading = false;
     }
 
     vm.save = function() {
-      console.log('save')
-      var Validation = registerService.valNewPlayers(vm.player);
+
+      console.log(vm.player);
+      var bio = localStorage.getItem('lsFile');
+      vm.player.bio =  bio.replace(/['"]+/g, '');
+
+      var Validation = validCode(vm.player);
       if (Validation === false){
         registerService.setPlayers(vm.player);
         $("#formSuccess").modal();
@@ -56,6 +67,16 @@
       };
       limpiar();
       init();
+    }
+
+    function validCode(player){
+      var validation = false;
+      for (var i = 0; i < vm.players.length; i++) {
+        if (vm.players[i].code == player.code) {
+          validation = true;
+        }
+      }
+      return validation;
     }
 
     vm.update = function() {
@@ -71,6 +92,8 @@
 
     function limpiar() {
       vm.players = {}
+      setTimeout(location.reload.bind(location), 1500);
     }
+
   }
 })();
